@@ -128,7 +128,7 @@
     <div bind:this={mainBodyDiv} class="w-[1140px] flex-grow-0 z-500">
         <div>
             <h1>{PUBLIC_APP_TITLE}</h1>
-            <h4 class="-mt-2">A frivol <a href="https://github.com/byJarrett">byJarrett</a> </h4>
+            <h4 class="-mt-2">A frivol <a href="https://github.com/byJarrett" target="_blank">byJarrett</a> </h4>
         </div>
 
         <div class="grid grid-flow-col grid-cols-auto w-fit">

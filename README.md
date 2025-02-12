@@ -6,8 +6,7 @@ A [Bloch sphere](https://en.wikipedia.org/wiki/Bloch_sphere) is a visual way of 
 
 Clicking on a history node reverts the qubit back to that state.
 
-<br/>
-Run it from Github: []()
+Run it from Github: [https://byjarrett.github.io/bloch-sphere/](https://byjarrett.github.io/bloch-sphere/) 
 
 <br/><br/>
 
