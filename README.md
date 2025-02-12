@@ -1,6 +1,6 @@
 
 
-# A Bloch Sphere Trifle
+# Bloch Sphere
 
 A [Bloch sphere](https://en.wikipedia.org/wiki/Bloch_sphere) is a visual way of illustrating the quantum state of a qubit.  Manipulate the state by applying quantum gates to the qubit.
 
@@ -13,7 +13,7 @@ Run it from Github: []()
 
 ## Technicals
 
-ABST is built using [Node](https://nodejs.org/en/download), [Svelte/SvelteKit](https://svelte.dev/), [vite](https://vite.dev/) and these key libraries
+Bloch Sphere is built using [Node](https://nodejs.org/en/download), [Svelte/SvelteKit](https://svelte.dev/), [vite](https://vite.dev/) and these key libraries
 - [mathjs](https://mathjs.org/)
 - [BabylonJS](https://www.babylonjs.com/)
 - [Tailwindcss](https://tailwindcss.com/)
