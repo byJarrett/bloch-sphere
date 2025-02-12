@@ -1,0 +1,70 @@
+- Clean up
+  - Remove all commented out code
+  - Remove all debug logging
+  - CSS hygiene
+
+
+- Sphere UI 
+  - reset sphere rotation (really is reset of camera position)
+  - rotate based on scrolling and not dragging
+
+
+- State Calculator
+  - Expand/collapse 
+  - Matrix element data input validation
+    - what can be imaginary or not
+  - Create event to fire on result change
+  - Option to show results as fractions
+  - Option to show results in Dirac notation
+
+
+- State Data View
+  - Option to show amplitudes as fractions
+  - Option to show amplitudes in Dirac notation
+
+
+- Applying gates
+  - History
+    - show/hide history
+    - copy history as Qskit
+  - gate sequence builder
+    - specify either the amplitudes, probabilities, polar or azimuth
+    - given the specified value and the current position, generate 
+      a gate series to get in that position
+  - AngleInput component    
+    - data input validation
+    - on hover of content space show ew-resize cursor
+    - on click and drag increment/decrement the value by some delta value
+        - delta will depend on degree/radian setting
+    - preview the change in the sphere visual
+
+
+- Visual Style
+  - set proper "active" states (test by tabbing through elements)
+  - draw polar and azimuth lines and angles on hover of values
+  - show possible outcome of gate
+    - all gates including the rotation gates
+    - show when button
+      - has focus (only applies to the rotation input component)
+      - has hover
+        - for rotation input this includes when the dialog is open
+  - Animations
+    - gate change
+    - gate change preview
+    - wave function
+  - Replace state calc png with an svg so it can be colored through the theme
+  - Consider making the calculator panel a dialog or put a visual seperator between it and the other UI
+  
+
+
+  - UI Components
+    - Create an icon button
+
+
+  - BUGS!
+    - Calculation precision workarounds for JS math overflow
+    - showing history popups behind RadiansPicker popup.  If RadiansPicker is open don't show the other popups
+    - Hide tooltip of input field when input field is in focus or active.  This is a flowbite defect.
+      - create a custom component
+
+
