@@ -1,0 +1,426 @@
+
+
+.fira-mono-regular {
+    font-family: "Fira Mono", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .fira-mono-medium {
+    font-family: "Fira Mono", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .fira-mono-bold {
+    font-family: "Fira Mono", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+  .roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+
+  
+
+
+@layer base
+{
+    :root 
+    {
+        --background-primary : theme('colors.gray-dark.1');
+        --background-secondary : theme('colors.gray-dark.12');
+        --background-tertiary : theme('colors.gray-dark.14');
+        --text-primary : theme('colors.gray-dark.12');
+        --text-secondary : theme('colors.gray-dark.9');
+        --text-tertiary : theme('colors.gray-dark.3');
+        --component-stroke : theme('colors.gray-dark.6');
+        --component-stroke-disabled : theme('colors.gray-dark.4');
+        --component-fill : theme('colors.gray-dark.2');
+        --component-fill-hover : theme('colors.gray-dark.3');
+        --component-fill-active : theme('colors.gray-dark.7');
+        --component-fill-disabled : theme('colors.gray-dark.4');
+        --accent-1 : theme('colors.blue-dark.6');
+        --accent-2 : theme('colors.purple-dark.6');
+    }
+
+
+    body
+    {
+        background-color: theme('colors.backgroundPrimary');
+        color: theme('colors.textPrimary');
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1rem;
+        margin: 48px 0px;
+        overflow-x: auto;
+        overflow-y: auto;
+        display:block;
+        text-wrap:nowrap;
+    }
+
+
+    h1
+    {
+        @apply text-3xl mt-2 mb-2 pointer-events-none;
+    }
+
+
+    h3
+    {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 13px;
+        line-height: 16px;
+        padding-bottom: 4px; 
+        @apply pointer-events-none;
+    }
+
+    h4
+    {
+        font-weight: 300;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color : theme('colors.textSecondary');
+    }
+}
+
+
+
+@layer components
+{
+    .button-primary
+    {
+        @apply inline-flex h-10 min-w-10;
+        @apply text-center items-center justify-center overflow-hidden; 
+        @apply rounded-md border-2 border-[theme(colors.componentStroke)];
+        @apply text-[theme(colors.textSecondary)] bg-[theme(colors.componentFill)];
+        @apply hover:bg-[theme(colors.componentFillHover)];
+        @apply active:bg-[theme(colors.componentFillActive)] active:text-[theme(colors.gray-dark.14)];
+        @apply disabled:bg-[theme(colors.componentFillDisabled)] disabled:border-[theme(colors.componentStrokeDisabled)] disabled:text-[theme(colors.gray-dark.7)];
+    }
+
+
+    .splitButton-container
+    {
+        @apply grid grid-flow-col auto-cols-max overflow-hidden w-max min-h-10 pointer-events-auto items-center;
+        @apply text-center font-normal leading-4;
+        @apply text-[theme(colors.textSecondary)] bg-[theme(colors.componentFill)];
+        @apply rounded-md border-2 border-[theme(colors.componentStroke)];
+        @apply disabled:bg-[theme(colors.componentFillDisabled)] disabled:border-[theme(colors.componentStrokeDisabled)] disabled:text-[theme(colors.gray-dark.7)];
+    }
+
+
+    .splitButton-content
+    {
+        @apply w-full h-full min-w-10;
+        @apply hover:bg-[theme(colors.componentFillHover)];
+        @apply active:bg-[theme(colors.componentFillActive)] active:text-[theme(colors.gray-dark.14)];
+
+    }
+
+    .splitButton-container button
+    {
+        @apply w-full h-full;
+    }
+
+
+    .splitButton-split
+    {
+        @apply border-l-2 border-[theme(colors.componentStroke)];
+        @apply h-full items-center inline-flex;
+        @apply hover:bg-[theme(colors.componentFillHover)];
+        @apply active:bg-[theme(colors.componentFillActive)] active:text-[theme(colors.gray-dark.14)];
+    }
+
+
+    .dropdown-container-class
+    {
+        @apply z-500;
+        @apply bg-[theme(colors.backgroundSecondary)];
+    }
+
+
+    .angleInput
+    {
+        @apply grid grid-flow-col auto-cols-max overflow-hidden w-max min-h-10 pointer-events-auto items-center;
+        @apply text-center font-normal leading-4;
+        @apply text-[theme(colors.textSecondary)] bg-[theme(colors.componentFill)];
+        @apply rounded-md border-2 border-[theme(colors.componentStroke)];
+        @apply disabled:bg-[theme(colors.componentFillDisabled)] disabled:border-[theme(colors.componentStrokeDisabled)] disabled:text-[theme(colors.gray-dark.7)];
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button 
+        {
+            --webkit-appearance: none;
+            margin:0;
+        }
+
+        input[type=number]
+        {
+            -moz-appearance: textfield;
+        }
+    }
+
+
+    .state-data-view--table
+    {
+        th
+        {
+            font-weight: 300;
+            font-style: normal;
+            font-size: 18px;
+            line-height: 20px;
+            padding-bottom: 4px; 
+            text-align: left;
+            padding-right: 16px;
+            padding-bottom: 8px;
+        }
+
+        .state-data-view--divider
+        {
+            padding-top: 48px;
+        }
+
+        .state-data-view--label
+        {
+            font-weight: 300;
+            font-style: normal;
+            font-size: 18px;
+            line-height: 20px;
+            padding-bottom: 4px; 
+            text-align: right;
+            padding-right: 16px;
+            padding-bottom: 8px;
+
+            @apply text-[theme(colors.textSecondary)] cursor-default;
+        }
+
+
+        .state-data-view--data
+        {
+            font-weight: 400;
+            font-style: normal;
+            font-size: 18px;
+            line-height: 20px;
+            padding-bottom: 4px; 
+            padding-right: 16px;
+        }
+    }
+
+
+    .matrix-container--popup
+    {
+        @apply border-[theme(colors.componentStroke)]; 
+        @apply text-[theme(colors.textTertiary)];
+        border-radius: 0.375rem; 
+        border-right: 2px solid;
+        border-left: 2px solid;
+        padding: 0.5rem;
+        width:fit-content;
+        display:grid;
+    }
+
+
+    .matrix-container
+    {
+        @apply border-[theme(colors.componentStroke)]; 
+        @apply text-[theme(colors.textPrimary)];
+        border-radius: 0.375rem; 
+        border-right: 2px solid;
+        border-left: 2px solid;
+        padding: 0.5rem;
+        width:fit-content;
+        display:grid;
+    }
+
+
+    .tooltipCustom
+    {
+        font-weight: 400 !important;
+        font-style: normal !important;
+        @apply !bg-[theme(colors.backgroundSecondary)] !text-[theme(colors.textTertiary)];
+        @apply max-w-64 text-wrap text-left;
+    }
+
+
+    .state-calculator-container
+    {
+        padding: 8px;
+    }
+
+
+    .state-calculator-container--alt-row
+    {
+        margin-top: 8px;
+        padding: 16px 8px 8px 8px;
+        border-top: 1px solid theme('colors.componentStroke');    
+
+    }
+
+
+    .number-input
+    {
+        @apply block w-16 h-full border-none bg-transparent my-auto mx-1 p-0;
+        @apply focus:ring-transparent focus:shadow-transparent focus:border-transparent focus:outline-transparent;
+        @apply focus-within:border-none focus-visible:border-none focus-visible:outline-none focus-within:ring-0 focus-visible:ring-0;
+
+        border: none;
+        text-align: right;
+        text-overflow: ellipsis;
+
+        input:focus
+        {
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    .number-input:hover
+    {
+        padding-bottom: 0px;
+        border-bottom: 1px solid theme('colors.textPrimary');
+    }
+
+    .number-input:focus
+    {        
+        outline: none;
+        box-shadow: none;
+        padding-bottom: 0px;
+        border-bottom: 1px solid theme('colors.textPrimary');
+    }
+
+
+    .number-input-error
+    {
+        color : theme('colors.red-light.4');
+    }
+
+    .number-input-error:focus
+    {
+        border-bottom: 1px solid theme('colors.red-light.4');
+    }
+
+
+    .dropdown-divider
+    {
+        height: 1px;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+        margin-left: auto;
+        margin-right : auto;
+        width:80%;
+        background-color: theme('colors.componentStroke');
+    }
+
+
+    .item-row
+    {
+        display: block flex;
+    }
+
+
+    .btn-item-row
+    {
+        @apply text-center inline-flex items-center justify-center;
+        height: 36px;
+        width: 36px;
+        min-width: auto;
+        overflow: idden;        
+        font-weight: 400;
+        border: none;
+        background-color: transparent;
+        margin-top : -8px;
+        margin-left : 8px;
+    }
+
+
+    .matrix-container-context-menu
+    {
+        border-radius: 0.375rem;
+        border: 2px solid;
+        border-color: transparent;
+        height:fit-content;
+        color: theme('colors.textPrimary');
+    }
+
+
+    .matrix-container-context-menu:hover
+    {
+        cursor: pointer;
+        color: theme('colors.componentStroke');
+    }
+}
