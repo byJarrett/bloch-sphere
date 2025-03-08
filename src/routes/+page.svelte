@@ -11,8 +11,9 @@
 	import { primaryGateUILabels, sGateUILabels, tGateUILabels, rotationGateUILabels } from '$lib/quantum/ui/common';
 	import QubitHistoryPanel from '$lib/quantum/ui/QubitHistoryPanel.svelte';
 	import StateCalculatorPanel from '$lib/quantum/ui/StateCalculatorPanel.svelte';
-    import { PUBLIC_APP_TITLE } from '$env/static/public';
 	
+
+    const PUBLIC_APP_TITLE = "Bloch Sphere";
     let blochScene : BlochScene = $state(new BlochScene());
 
     let q0 = $state(new Qubit());
@@ -138,18 +139,17 @@
             <div>
                 <BabylonEngine sceneFactory={blochScene}></BabylonEngine>
             </div>
-            <div class="min-w-72 place-content-end mb-18 -m-l-2">
+            <div class="min-w-72 place-content-end mb-18 -m-l-2">                
                 <QubitStateDataView alphaAmplitude={alphaAmp} betaAmplitude={betaAmp} polarAngle={polarAngle} azimuthAngle={azimuthAngle}></QubitStateDataView>
             </div>
         </div>
 
-        <div class="-mt-10 w-[88%] pr-6"> 
+        <div class="-mt-10 w-[88%] pr-6 h-[72px]"> 
             <QubitHistoryPanel data={historyValues} onSelect={onHistoryItemSelected}/>
-        </div>
-
-        <!--div class="mt-8 w-full"> 
+        </div>        
+        <div class="mt-8 w-full"> 
             <StateCalculatorPanel currentAlpha={alphaAmp} currentBeta={betaAmp}/>
-        </div--> 
+        </div> 
     </div>
     <div class="grow min-w-12"></div>
 </div>
