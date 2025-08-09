@@ -10,12 +10,12 @@
 
 
 - State Calculator
-  - Expand/collapse 
   - Matrix element data input validation
     - what can be imaginary or not
   - Create event to fire on result change
   - Option to show results as fractions
   - Option to show results in Dirac notation
+  - Add symbol imputs like https://www.symbolab.com/solver/complex-numbers-calculator
 
 
 - State Data View

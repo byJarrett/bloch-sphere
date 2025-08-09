@@ -70,6 +70,8 @@
     {
         width : 550px;
         height : 550px;
-        touch-action:none
+        touch-action:none;
+        border: none;
+        outline: none;
     }
 </style>

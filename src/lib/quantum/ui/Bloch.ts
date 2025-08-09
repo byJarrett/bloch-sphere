@@ -17,7 +17,6 @@ export interface BlochSceneStyle
 
 interface BlochSceneStyleInternal
 {
-    backgroundColor : string;
     sphereColor : string;
     sphereOpacity : number;
     stateMarkerColor : string;
@@ -38,13 +37,11 @@ export class BlochScene implements SceneFactory
     private readonly MinusKetVector = new BABYLON.Vector3(0, 0, -1.0);
 
     private readonly DEFAULT_STYLE : BlochSceneStyleInternal = {
-        "backgroundColor" : "#1E1F2200",
         "sphereColor" : "#000000",
         "sphereOpacity" : 0.1,
         "stateMarkerColor" : "#F7DE8B",
         "amplitudeMarkerColor" : "#955AE0"
     }
-    
 
     private camera : BABYLON.ArcRotateCamera | undefined;
     private polarAmplitudeDisc : BABYLON.Mesh | undefined;
@@ -60,7 +57,7 @@ export class BlochScene implements SceneFactory
         this.styleConfig = this.validateStyle(style);
 
         const scene = new BABYLON.Scene(engine);
-        scene.clearColor = BABYLON.Color4.FromHexString(this.styleConfig.backgroundColor);
+        scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
 
         // Add a camera to the scene and attach it to the canvas
         this.camera = new BABYLON.ArcRotateCamera("camera1", -Math.PI / (Math.PI * 1.3), Math.PI / 2.6, 6, new BABYLON.Vector3(0, 0, 0), scene);
